@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link , useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 export default function Login() {
   const [credentials, setcredentials] = useState({ email: "", password: "" })
@@ -30,6 +31,10 @@ export default function Login() {
   }
   return (
     <>
+      <div style={{backgroundImage: 'url("https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', height: '100vh', backgroundSize: 'cover' }}>
+      <div>
+        <Navbar/>
+      </div>
       <div className='container'>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -44,6 +49,7 @@ export default function Login() {
           <button type="submit" className="m-3 btn btn-success">Submit</button>
           <Link to="/createuser" className='m-3 btn btn-danger'>New User</Link>
         </form>
+      </div>
       </div>
     </>
   )
